@@ -69,9 +69,9 @@ model Item {
   updated_at DateTime? @default(now())
 
   order Order @relation(fields: [order_id], references: [id])
-  product Product @relation(fields: [produc_id], references: [id])
+  product Product @relation(fields: [product_id], references: [id])
 
   @@map("items")
   order_id String
-  produc_id String
+  product_id String
 }
