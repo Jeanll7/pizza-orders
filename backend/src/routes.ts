@@ -23,6 +23,9 @@ import { ListOrdersController } from './controllers/order/ListOrdersController';
 import { DetailOrderController } from './controllers/order/DetailOrderController';
 import { FinishOrderController } from './controllers/order/FinishOrderController';
 
+// Importe o controlador para excluir usuário
+import { DeleteUserController } from './controllers/user/DeleteUserController'; 
+
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 import uploadConfig from './config/multer';
@@ -35,7 +38,6 @@ const upload = multer(uploadConfig.upload('./tmp'));
 // POST - Enviar dados do formulário, fazer upload de arquivos, criar um novo registro
 router.post('/users', new CreateUserController().handle);
 router.post('/session', new AuthUserController().handle);
-// Rota para excluir um usuário
 
 // GET - Recuperar dados.
 router.get('/me', isAuthenticated, new DetailUserController().handle);
@@ -63,5 +65,8 @@ router.get('/orders', isAuthenticated, new ListOrdersController().handle);
 router.get('/order/detail', isAuthenticated, new DetailOrderController().handle);
 
 router.put('/order/finish', isAuthenticated, new FinishOrderController().handle);
+
+//  Excluir Usuário
+router.delete('/user/:id', isAuthenticated, new DeleteUserController().handle);
 
 export { router };
