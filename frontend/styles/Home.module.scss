@@ -5,21 +5,16 @@
     align-items: center;
     flex-direction: column;
     background-color: var(--gray-900);
-    .img,
-    .imgSignup {
-        width: 350px;
+    .img {
+        width: 250px;
         height: auto;
         border-radius: 4px;
-        filter: contrast(3) brightness(1);
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-    .imgSignup {
-        margin-bottom: -20px;
+        filter: invert(100%);
     }
 }
 
 .login {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     width: 600px;
     display: flex;
     align-items: center;

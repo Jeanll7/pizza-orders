@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../../styles/home.module.scss'
 
-import logoImg from '../../../public/logo.png';
+import logoImg from '../../../public/logo-pizza.png';
 
 import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
@@ -55,7 +55,7 @@ export default function Signup() {
         <title>Faça seu cadastro agora!</title>
       </Head>
       <div className={styles.containerCenter}>        
-        <Image className={styles.imgSignup} src={logoImg} alt="Logo da Pizzaria" />
+        <Image className={styles.img} src={logoImg} alt="Logo da Pizzaria" />
 
         <div className={styles.login}>
           <h1>Criando sua conta</h1>

@@ -3,7 +3,7 @@ import { parseCookies, destroyCookie } from 'nookies';
 import { AuthTokenError } from '../services/errors/AuthTokenError';
 
 export function canSSRAuth<P extends Record<string, any>>(fn: GetServerSideProps<P>) {
-  return async (ctx: GetServerSidePropsContext): Promise<GetServerSidePropsResult<P>> => {
+  return async (ctx: GetServerSidePropsContext<P>): Promise<GetServerSidePropsResult<P>> => {
     const cookies = parseCookies(ctx);
     const token = cookies['@nextauth.token'];
 

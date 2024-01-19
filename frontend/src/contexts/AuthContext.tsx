@@ -96,7 +96,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       api.defaults.headers['Authorization'] = `Bearer ${token}`
 
-      toast.success('Logado com sucesso!');
+      // toast.success('Logado com sucesso!');
+      toast('Logado com sucesso!');
     
       Router.push('/dashboard'); // Redirecionar o user para /dashboard
 

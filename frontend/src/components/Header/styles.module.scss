@@ -11,10 +11,10 @@
     justify-content: space-between;
     align-items: center;
     img {
-        width: 200px;
+        width: 160px;
         cursor: pointer;
         border-radius: 4px;
-        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+        filter: invert(100%);
     }
 }
 

@@ -11,7 +11,7 @@ import { canSSRAuth } from '../../utils/canSSRAuth'
 export default function Category() {
   const [name, setName] = useState('')
 
-  async function handleSubmit(event: FormEvent) {
+  async function handleRegister(event: FormEvent) {
     event.preventDefault();
 
     if (name === '') {
@@ -38,7 +38,7 @@ export default function Category() {
         <main className={styles.container}>
           <h1>Cadastrar categoria</h1>
 
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleRegister}>
             <input 
             type="text" 
             placeholder="Digite o nome da categoria"
