@@ -30,7 +30,7 @@ export default function Product({ categoryList }: CategoryProps) {
 
   // Inicialize diretamente com a propriedade recebida
   // const [categories, setCategories] = useState(categoryList);
-  const [categories, setCategories] = useState(categoryList || [])
+  const [categories, setCategories] = useState(categoryList)
   const [categorySelected, setCategorySelected] = useState(0)
 
   function handleFile(e: ChangeEvent<HTMLInputElement>) {
@@ -168,9 +168,10 @@ export default function Product({ categoryList }: CategoryProps) {
 }
 
 export const getServerSideProps  = canSSRAuth(async (ctx) => {
-  const apiClient =  setupAPIClient(ctx);
+  const apiClient = setupAPIClient(ctx);
 
   const response = await apiClient.get('/category');
+
   //console.log(response.data);
 
   return {
