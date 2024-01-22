@@ -67,8 +67,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       })
       .catch((err) => {
         // se deu erro deslogamos user.
-        console.error('Erro ao obter dados do usuário:', err);
-        
+        console.error('Erro ao obter dados do usuário:', err);        
         signOut();
       });
     }
@@ -102,10 +101,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       Router.push('/dashboard'); // Redirecionar o user para /dashboard
 
     } catch(err) {
-      toast.error('Error ao acessar!')
+      toast.error('Erro ao acessar!')
       console.log("Erro ao tentar autenticar", err)
     }
-  };
+  }
 
   async function signUp({name, email, password}: SignUpProps) {
     try {
